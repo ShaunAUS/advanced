@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+//fieldTraceLog만 있음
 @RestController
 @RequiredArgsConstructor
 public class OrderControllerV3 {
@@ -21,7 +22,7 @@ public class OrderControllerV3 {
 
         TraceStatus status = null;
         try {
-            status = trace.begin("OrderControllerV3.request()");
+            status = trace.begin("OrderControllerV3.request()");// 구현체가 싱글톤으로 빈등록이 되있는상태라 (fieldLogTrace) 동시성 문제 있음
             orderService.orderItem(itemId);
             trace.end(status);
             return "ok";

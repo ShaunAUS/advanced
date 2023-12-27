@@ -6,6 +6,7 @@ import hello.advanced.trace.TraceId;
 import hello.advanced.trace.TraceStatus;
 import lombok.extern.slf4j.Slf4j;
 
+//싱글톤으로 등록된 스프링 빈
 @Slf4j
 public class FieldLogTrace implements LogTrace {
 
